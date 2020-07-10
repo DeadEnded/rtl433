@@ -49,7 +49,7 @@ RUN apk add --no-cache --virtual .build-deps build-base cmake git bash \
 # Use this variable when creating a container to specify the MQTT broker host.
 ENV MQTT_HOST=""
 # Fix crash due to library relocation
-RUN echo "export PATH=/usr/local/lib64:${PATH}" >> /root/.bashrc
+RUN echo "export LD_LIBRARY_PATH=/usr/local/lib/"
 
 # When running a container this script will be executed
 ENTRYPOINT ["/scripts/rtl2mqtt.sh"]
