@@ -10,5 +10,8 @@
 export LANG=C
 PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
+# Added to fix library issue
+export LD_LIBRARY_PATH=/usr/local/lib64
+
 # Start the listener
 /usr/local/bin/rtl_433 -M newmodel -F mqtt://mosquitto:1883,events=rtl433/events,devices=rtl433/devices[/type][/model][/subtype][/channel],states #=rtl433/states
